@@ -17,28 +17,24 @@ Before getting started with the deployment process, ensure that you have the fol
     
     ```
     python3 -m venv env
-    
     ```
     
 3. Activate the virtual environment using the following command:
     
     ```
     source env/bin/activate
-    
     ```
     
 4. Install the required packages using the following command:
     
     ```
     pip install -r requirements.txt
-    
     ```
     
 5. Generate a new secret key for your Django project. You can use any online tool or generate it using the following command:
     
     ```
     python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
-    
     ```
     
     Copy the generated secret key.
@@ -48,7 +44,6 @@ Before getting started with the deployment process, ensure that you have the fol
     ```
     SECRET_KEY={your_secret_key}
     DEBUG=True
-    
     ```
     
     Replace `{your_secret_key}` with the secret key you generated in step 5.
@@ -57,7 +52,6 @@ Before getting started with the deployment process, ensure that you have the fol
     
     ```
     python manage.py runserver
-    
     ```
     
     Open your browser and go to `http://localhost:8000/`
@@ -66,25 +60,22 @@ Before getting started with the deployment process, ensure that you have the fol
 
     ```
     heroku create
-    
     ```
 
 11. Add the following environment variables in the Heroku app settings:
 
-```
-SECRET_KEY={your_secret_key}
-DISABLE_COLLECTSTATIC=1
-
-```
+    ```
+    SECRET_KEY={your_secret_key}
+    DISABLE_COLLECTSTATIC=1
+    ```
 
 Replace `{your_secret_key}` with the secret key you generated in step 5.
 
 12. Deploy the app to Heroku using the following command:
 
-```
-git push heroku master
-
-```
+    ```
+    git push heroku master
+    ```
 
 Wait for the deployment to finish.
 
@@ -92,9 +83,6 @@ Wait for the deployment to finish.
 
 15. Test the app on Heroku by opening it in your browser.
 
+## Issues
+
 Any issues with the deployment process? Please open an issue on this repository.
-
-## Additional Notes
-
-- The configuration for the production environment is located in `config/settings/prod.py`. You can modify this file to suit your needs.
-- To make changes to the app, push the changes to the master branch of this repository and then deploy it to Heroku using the command in step 12.
