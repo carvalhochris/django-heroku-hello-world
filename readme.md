@@ -79,9 +79,7 @@ Replace `{your_secret_key}` with the secret key you generated in step 5.
 
 Wait for the deployment to finish.
 
-14. Create a superuser on Heroku using the following command:
-
-15. Test the app on Heroku by opening it in your browser.
+13. Test the app on Heroku by opening it in your browser.
 
 ## Issues
 
